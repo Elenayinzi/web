@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- https://www.cnblogs.com/yumo1627129/p/7198968.html：meta标签的详细用法 -->
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>html入门知识学习</title>
+        <!-- 外部式和嵌入式的优先级看他们他们放的顺序有关 -->
+        <link rel="stylesheet" href="../css/index.css" type="text/css">
+        <style type="text/css">
+        /* 样式选择器：标签选择器p{}，类选择器.class{}，id选择器#id{} ,子选择器(>)p>span, 包含后代选择器(空格隔开)p span,
+           通用选择器(*)作用于html类所有标签，
+           伪类选择器:a:hover(可以兼容所有浏览器)，其他的伪类选择器兼容性不好
+           分组选择符(,):h1,p
+           样式继承：父标签的样式可以被子标签继承，但是有些样式不具有继承性例如border
+           权值：标签1，类选择器10，id选择器100，继承权值只有0.1
+           层叠：当同一个元素设置样式的权重值一样的时候，处于最后面的css样式会生效
+           重要性:!important，p{color:red!important;}将样式设置为最高样式
+        */
+
+        /*文字排版问题:
+            字体：font-family: '宋体'
+            字号：font-size: 20px;
+            颜色: color: red;
+            粗体: font-weight：bold;
+            斜体: font-style: italic;
+            下划线:text-decoration:underline;
+            删除线: text-decoration:line-through;
+        段落排版问题：
+            缩进:text-indent:2em;两个文字的空格
+            行高：line-height:2em;
+            中文字间距和英文字母间距：letter-spacing:20px;
+            英文单词间距：word-spacing:20px;
+            设置块状元素的文本和图片对齐: text-align:center/left/right
+        */
+
+        /*元素分类：
+            块状元素：block eg：div;1.独占一行；2.可设置宽width、高height，行高line-height，边距margin；3.宽度默认=父容器宽度100%
+            内联元素（行内元素）：inline eg:span; 1.不独占一行;2.不能设置高宽margin边距;3.元素宽度等于内容的宽度；
+            4.内联元素之间有一个间距问题:内联元素想当于一个字，每个字之间空格或者换行显示出来就会空格,解决方法：1.把元素放在一行 2.设置父元素font-size:0px；子元素font-size:12px;
+            内联块状元素：inline-block eg:img,input;1.不独占一行;2.可设置宽width、高height，行高line-height，边距margin；3.元素宽度等于内容的宽度；
+        */
+
+        /*盒模型：块状元素具备盒模型特征：盒子实际高度=内容+padding+margin+border
+        内容到盒子边框padding填充
+        边框border
+        盒子与盒子之间margin
+        */
+
+        /*布局模型
+            Flow:流动模型，网页吗默认布局模式，
+            特点:1.块状元素自上而下的按顺序垂直延伸，宽度默认100%=父元素宽度；2.内联元素和内联块状元素从左到右水平分布
+            Float:浮动模型，设置float属性可以块状元素浮动显示
+            Layer:层模型，定位position属性支持层模型
+            三种层模型：
+            绝对定位：absolute:(使用left,top,right,bottom)相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口
+            相对定位：relative:它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，
+            然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+            固定定位：fixed;表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。
+            由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，或改变浏览器窗口的显示大小，
+            因此固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响，这与background-attachment:fixed;
+            属性功能相同。以下代码可以实现相对于浏览器视图向右移动100px，向下移动50px。并且拖动滚动条时位置固定不变。
+        */
+            h1{
+                font-size: 12px;
+                color: red;
+                text-align: center; /*水平居中*/
+                border: 1px solid red;
+                height: 100px;
+                width: 100px;
+                margin: 0;
+            }
+            img{
+                color: green;
+                width: 100px;
+                height: 100px;
+                border: 1px solid red;
+            }
+            p{
+                margin: 0;
+            }
+            blockquote{
+                /* margin: 0; */
+            }
+            td,th{
+                border:1px solid #000;
+            }
+        </style>
+        <script></script>
+    </head>
+    <body>
+        <!-- 段前段后都有空白：margin:0除去空白 -->
+        <h1>hello world&nbsp;&nbsp;</h1>
+        <hr/>
+        <p>我的图片</p>
+        <em>斜体强调</em><br/>
+        <strong>粗体强调</strong><br/>
+        <span>无语义，只是为了设置单独样式</span><br/>
+        <p>短文本引用双引号：<q>聪明秀出为之英，胆略过人为之雄。</q></p>
+        <p>长文本引用缩进样式：<blockquote>明月出天山，苍茫云海间。长风几万里，吹度玉门关。汉下白登道，胡窥青海湾。由来征战地，不见有人还。 
+            戍客望边色，思归多苦颜。高楼当此夜，叹息未应闲。</blockquote></p>
+        <img src="http://img.mukewang.com/52b4113500018cf102000200.jpg" alt="我的头像">
+        <address>北京市西城区德外大街10号</address>
+        <!-- 插入一行代码 -->
+        <code>var i=i+300;</code>
+        <!-- 插入一段代码 -->
+        <pre>
+            var message="欢迎";
+            for(var i=1;i<=10;i++)
+            {
+                alert(message);
+            }
+        </pre>
+        <!-- 预显示格式:空格，换行都可以保留 -->
+        <pre>a   b</pre>
+        <ul>
+            <li>无序列表</li>
+            <li>meili</li>
+            <li>天真</li>
+            <li>活泼</li>
+        </ul>
+        <ol>
+            <li>有序列表</li>
+            <li>meili</li>
+            <li>天真</li>
+            <li>活泼</li>
+        </ol>
+        <!-- div用来实现各种布局，独立逻辑模块 -->
+        <div>
+            <h2>热门课程排行榜</h2>
+            <ol>
+                <li>前端开发面试心法 </li>
+                <li>零基础学习html</li>
+                <li>javascript全攻略</li>
+            </ol>
+        </div>
+        <div>
+            <h2>最新课程排行</h2>
+            <ol>
+                <li>版本管理工具介绍—Git篇 </li>
+                <li>Canvas绘图详解</li>
+                <li>QQ5.0侧滑菜单</li>
+            </ol>
+        </div>
+        <table summary="班级平均成绩">
+            <!-- 表格标题 -->
+            <caption>平均成绩</caption>
+            <thead>
+                <tr>
+                <th>班级</th>
+                <th>学生数</th>
+                <th>平均成绩</th>
+                </tr>  
+            </thead>
+            <tbody>
+                <tr>
+                <td>一班</td>
+                <td>30</td>
+                <td>89</td>
+                </tr>
+                <tr>
+                <td>二班</td>
+                <td>35</td>
+                <td>85</td>
+                </tr>
+                <tr>
+                    <td>三班</td>
+                    <td>32</td>
+                    <td>80</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 超链接是指从一个网页指向一个目标的连接关系 -->
+        <a href="http://www.imooc.com"  title="点击进入慕课网" target="_blank">click here!</a>
+        <a href="mailto:1090054400@qq.com?subject=测试网页发邮件&body=测试邮件">发送邮件</a>
+        <!-- 表单 -->
+        <form method="post" action="save.php">
+            <label for="username">用户名:</label>
+            <input type="text"  name="username" id="username" value="" /><br/>
+            <label for="pass">密码:</label>
+            <input type="password"  name="pass" id="pass" value="" /><br/>  
+            <input type="submit" value="确定"  name="submit" />
+            <input type="reset" value="重置" name="reset" /><br/>
+            <label>联系我们:</label>
+            <textarea cols="50" rows="10" >在这里输入内容...</textarea>
+            <label>男</label>
+            <input type="radio" value="1"  name="gender" checked="checked"/>
+            <label>女</label>
+            <input type="radio" value="2"  name="gender" />
+            <label for="male">男</label>
+            <input type="checkbox" value="1"  name="gender" checked="checked" id="male"/>
+            <label>女</label>
+            <input type="checkbox" value="2"  name="gender" />
+            <select name="favoirate" multiple="multiple">
+                <option value="1">摄影</option>
+                <option value="2" selected="selected">绘画</option>
+                <option value="3">烘培</option>
+            </select>
+        </form>
+        <div style="width:100px;height:100px; border:1px solid red;text-align:center;">
+            文本内容
+        </div>
+    </body>
+</html>
