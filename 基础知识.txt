@@ -1,0 +1,12 @@
+html是xtml语法的子集，并且进行了简化
+html5是在html上延续并且做了更多的优化和简化
+1.声明方式：<!doctype html>
+2.字符编码声明：<meta chartset="utf-8">
+3.语言声明：<html lang="zh-CN">
+4.大小写都可以：最好保持一致小写
+5.增加布尔值，checkbox,radio中只要用checked即可，不用checked=checked
+6.可以省略引号：最好使用双引号
+7.可以省略结束符的标签
+（1）不允许写结束符的标签
+（2）可以省略结束符的标签
+（3）可以完全省略的标签
