@@ -1,5 +1,6 @@
+一：html
 html是xtml语法的子集，并且进行了简化
-html5是在html上延续并且做了更多的优化和简化
+Html5是在html上延续并且做了更多的优化和简化
 1.声明方式：<!doctype html>
 2.字符编码声明：<meta chartset="utf-8">
 3.语言声明：<html lang="zh-CN">
@@ -10,3 +11,90 @@ html5是在html上延续并且做了更多的优化和简化
 （1）不允许写结束符的标签
 （2）可以省略结束符的标签
 （3）可以完全省略的标签
+8.新增标签：
+(1)结构标签：
+section内容区块
+article内容区块的一个独立内容
+aside是article内容相关的辅助信息
+header内容区块的标题
+hgroup页面标题组合
+footer脚注，像作者名，地址，联系方式等
+nav导航链接部分
+figure一段独立的流内容
+(2)表单标签:
+email邮件
+url地址
+number数值
+range范围值
+DatePickers日期选择器：date,month,week,datetime,datetime-local,time
+search搜索域
+color
+(3)媒体标签：
+video视频标签，h4中用object
+audio音频标签，h4中用object
+embed嵌入各种媒体，h4中用object
+(4)其他功能标签：
+mark标准
+progress进度条
+time标注时间给搜素引擎搜索
+ruby注释字
+rt
+wbr软换行
+canvas绘图
+command命令兼容性不好
+details详情
+datalist列表
+keygen加密
+output计算输出值
+source
+menu菜单
+code
+pre
+删除标签:
+(1)可以用css代替的标签basefont，big，center，font，s，strike，tt，u
+(2)不再使用frame框架
+(3)只有个别浏览器支持的标签：applet,bgsound,blink,marquee
+(4)其他不常用的标签：rb,dir等
+9.新增属性：
+    表单属性：
+    链接属性：media，对设备进行优化；hreflang,ref;
+    其他属性：
+    html标签中的mainfest定义离线应用文件；meta的charset;
+    定义浏览器窗口小图标link ref="icon" href="" sizes属性现在可设置大小
+    base中增加了target属性，<base href="http://localhost/">这个href作为源地址+超链接地址
+    script标签增加:defer：页面加载后才执行内容;async：异步执行
+    ol增加reversed倒序，start开始值
+    menu的type类型
+    style属性scoped定义样式有效范围
+    iframe的seamless去掉边框，srcdoc定义内容，有它则src内容被覆盖；sandbox规定安全级别有四个值控制四个限制开关
+删除属性：
+    可以用css代替的属性：
+    多余属性：
+    其他属性：
+10.全局属性:任何标签都可以使用的属性-data-type自定义属性；hidden隐藏标签；spellcheck语法纠错;
+    tabindex控制tab的跳转顺序；contenteditable内容可编辑;script标签的designMode属性打开可以在网页
+    实时编辑window.document.designMode = 'on';
+
+二：css
+1.css动画
+transition过渡属性
+animation动画属性
+transform变换属性：改变形状大小和位置；translate位置;rotate旋转;scale放大;skew扭曲;matrix矩阵;
+animation-delay:动画执行时间，默认0；正值或者负值都可以
+巧用border颜色
+巧用border宽度
+实现运动动画：正圆运动；椭圆运动；弧形运动；
+css3hover效果：定位，颜色，动画，过渡
+动画库csshake
+
+
+css要做的练习:
+1.css各种布局
+2.css各种选择器
+3.css各种定位
+4.css动画
+
+html5要做的练习:
+1.新标签页面练习
+
+js要做的练习:
