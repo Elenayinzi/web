@@ -86,7 +86,8 @@ animation-delay:动画执行时间，默认0；正值或者负值都可以
 实现运动动画：正圆运动；椭圆运动；弧形运动；
 css3hover效果：定位，颜色，动画，过渡
 动画库csshake
-
+css新东西：sass,less,stylus预处理器
+css制作图标开源项目：one.div;fileicon.css
 
 css要做的练习:
 1.css各种布局
