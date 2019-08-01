@@ -90,6 +90,47 @@ css新东西：sass,less,stylus预处理器
 css制作图标开源项目：one.div;fileicon.css
 css书籍：css权威指南；精通css高级web标准解决方案；css secrets
 
+三.js
+1.学习js让网页有更多的交互
+2.插入js使用script标签
+3.引用外部js，script
+4.js在页面的位置head,或者body
+5.js语句：功能代码+分号(;);js注释：单行注释//,多行注释/**/
+6.js变量，区分大小写，字母，下划线，美元符号开头，关键字不能做变量名，变量先声明再赋值；
+变量是用于存储某种/某些数值的存储器;声明:var 变量名;
+7.条件判断if...else...;函数：function hanshuming(){功能代码;}
+8.常用互动的方法：
+(1)输出内容：document.write('hello');
+(2)警告消息框:alert('hello')
+(3)消息对话框确认框:confirm('确定吗?')返回true/false
+(4)消息对话框提问输入:prompt('请输入名字','myname')，返回myname/null
+(5)打开新窗口:window.open();关闭窗口:window.close();
+9.dom：文档对象模型DOM
+(1)元素节点:即标签
+(2)文本节点:即标签中的文本图片等内容
+(3)属性节点:即标签的属性
+通过ID获取元素:getElementById('id'),结果为一个对象或者null;
+获取/改变对象的值用object.innerHTML
+改变dom对象的样式:object.style.propety = "";
+object.style.display = none/block;控制元素的隐藏和显示
+获取或者改变元素的类名,object.className;
+9.表达式:num = num + 1;
+10.操作符:算数操作符(+,-,*,/.++,--),比较操作符(<,>,>=,<=,==,!=),逻辑操作符(&&,||,!),赋值符号=
+优先级:算数>比较>逻辑>赋值,同级从左到右，改变优先级用括号()
+11.数组:一个数组变量可以存放多个数据;索引从0开始;
+定义数组:var arr = new Array();[unfined] var arr = new Array(8);长度为8
+数组赋值:var arr = new Array(1,2,3); var arr = [1,2,3]; arr[0]=1;
+向数组添加新元素：arr[5]=9;增加新索引；
+使用数组：arr[index];
+数组的长度:arr.length
+二维数组:arr[][];arr[[],[]];
+12.流程控制语句:if;if...else...;if...else if...else;switch(){case1:break;case2:break;default:}
+for循环:for(初始化变量;循环条件;循环迭代){循环语句}
+while循环:while循环重复执行一段代码，直到某个条件不再满足。while(条件){循环语句}
+do...while: do{循环语句}while(条件)，循环体至少会执行一次;
+使用break退出循环，循环结束;
+continue：跳出本次循环，但是整个循环体还要继续执行下去;
+
 css要做的练习:
 1.css各种布局
 2.css各种选择器
