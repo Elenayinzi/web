@@ -3,28 +3,32 @@
     <head>
         <title>css制作图标</title>
         <style type="text/css">
+            body{
+                background: pink;
+            }
             .trangle{
                 width: 0px;/*不设置宽度时默认时父元素的宽度也就是100%*/
                 height: 0px;
                 margin: 100px auto;
-                border: 150px solid;
-                border-left-color: red;
+                border: 150px solid blue;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                /* border-left-color: red;
                 border-top-color: green;
                 border-right-color: yellow;
                 border-bottom-color: blue;
                 border-left-color:transparent;
                 border-top-color:transparent;
-                border-right-color:transparent;
+                border-right-color:transparent; */
                 /* border-bottom-width:300px; */
             }
             .hudu{
-                width: 300px;
+                width: 200px;
                 height: 200px;
-                background: #fff;
+                background: transparent;
                 margin:10px auto;
-                border-radius: 20px;
-                outline: none;
-                border: 20px solid green;
+                border-top-left-radius: 200px;
+                border-top: 100px solid black;
             }
         </style>
     </head>

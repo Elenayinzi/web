@@ -76,8 +76,8 @@ pre
     实时编辑window.document.designMode = 'on';
 
 二：css
-1.css动画
-transition过渡属性
+1.css动画：transiotin,animation;-webkit-,-moz-,-o-
+transition过渡属性:<过渡属性名称 过渡时间>，<过渡属性名称 过渡时间><过渡模式>
 animation动画属性
 transform变换属性：改变形状大小和位置；translate位置;rotate旋转;scale放大;skew扭曲;matrix矩阵;
 animation-delay:动画执行时间，默认0；正值或者负值都可以
@@ -88,12 +88,16 @@ css3hover效果：定位，颜色，动画，过渡
 动画库csshake
 css新东西：sass,less,stylus预处理器
 css制作图标开源项目：one.div;fileicon.css
+css书籍：css权威指南；精通css高级web标准解决方案；css secrets
 
 css要做的练习:
 1.css各种布局
 2.css各种选择器
 3.css各种定位
 4.css动画
+5.使用css3创建简单的3D场景：
+prespective;perspective-origin:创建3D场景
+transfrom;translate(位移),rotate(旋转)：场景变换
 
 html5要做的练习:
 1.新标签页面练习
