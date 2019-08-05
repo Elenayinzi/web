@@ -130,6 +130,100 @@ while循环:while循环重复执行一段代码，直到某个条件不再满足
 do...while: do{循环语句}while(条件)，循环体至少会执行一次;
 使用break退出循环，循环结束;
 continue：跳出本次循环，但是整个循环体还要继续执行下去;
+函数:函数的作用，可以写一次代码，然后反复地重用这个代码
+定义函数:function 函数名(参数1,参数2){函数体}
+函数调用:函数定义好后，是不能自动执行的，需要调用它,直接在需要的位置写函数名
+返回值的函数：return;
+事件:鼠标事件:
+onclick单击事件；onmouseover鼠标经过事件；onmouseout鼠标移开事件；
+onchange文本框内容改变事件；onselect文本框内容选中事件；onfocus光标聚集；
+onblur光标离开；
+onload网页导入：事件会在页面加载完成后，立即发生，同时执行被调用的程序；
+onunload关闭网页：当用户退出页面时（页面关闭、页面刷新等），触发onUnload事件；
+javascript内置对象:
+JavaScript 中的所有事物都是对象，如:字符串、数值、数组、函数等，每个对象带有属性和方法。
+日期对象：Date;定义一个时间对象:var date = new Date();星期、月、日、年、时、分、秒、时区
+内置的日期方法有:
+get/setDate():返回或设置日期
+get/setFullYear():返回或者设置四位数的年份
+get/setYear():返回或设置年份
+get/setMonth():返回或设置月份
+get/setHours():返回或设置小时，24小时制
+get/setMinutes():返回/设置分钟数
+get/setSeconds():返回/设置秒钟数
+get/setTime():返回/设置时间(毫秒为单位)一秒 = 1000 毫秒
+getDay():返回星期0-6，0表示星期天
+
+String字符串对象:定义字符串的方式是直接赋值:var str = "";
+属性：length：长度
+方法：
+toUpperCase()小写转大写；toLowerCase()大写转小写；charAt(index)返回指定位置的字符；
+返回指定的字符串首次出现的位置:str.indexOf(substr,startindex);没有指定的子字符串时返回-1;
+字符串分割:str.split(分隔符);将字符串分割成数组返回数组；
+提取字符串:str.substring(start,end);start必选，end可选；返回start-end-1的字符串，长度为end-start
+提取指定数目的字符:str.substr(start,length);
+
+Math对象:提供对数据的数学计算Math 对象是一个固有的对象，无需创建它，直接把Math作为对象使用就可以调用其所有属性和方法。
+属性：Math.E,LN2,PI...
+方法:Math.abs(x)绝对值;Math.max(x,y)最大值;min(x,y)最小值;
+0-1随机数:Math.random();
+向上取整数:Math.ceil(x);
+向下取整:Math.floor(x);
+四舍五入:Math.round(x);
+
+Array数组对象:var arr = new Array();
+属性：length长度
+方法:
+concat()连接多个数组返回新数组；arr1.concat(arr2,arr3);返回一个副本，可以用来深拷贝
+join()将数组用指定分隔符转为字符串；
+pop()删除并返回数组最后一个元素;
+push()像数组末尾插入一个元素返回数组长度;
+reverse()颠倒数组的顺序；
+shift()删除并返回数组的第一个元素；
+slice(start,end)从数组中返回选定的元素,返回一个子元素：
+sort(函数)对数组进行排序
+splice()删除元素像数组中添加新元素
+toSource()返回该对象的源码
+toString()数组转为字符串
+toLocaleString()将数组转换为本地数组
+unshift()像数组开头添加元素
+valueOf()返回数组对象的原始值
+split()字符串转数组
+
+浏览器对象:
+window对象：window对象是BOM的核心，window对象指当前的浏览器窗口
+方法:alert();prompt();confirm();open();close();print();focus();blur();
+moveBy();moveTo();resizeBy();resizeTo();scrollBy();scrollTo();setInterval();
+setTimeout();clearInterval();clearTimeout();
+
+JavaScript计时器：
+一次性计时器：setTimeout(函数,1000);clearTimeout();
+间隔性计时器: setInterval(函数,1000);clearInterval();
+
+History对象:history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。
+属性:length：历史浏览的URL数量
+方法:back()前一个URL;forward()后一个URL;go()指定的页面URL;
+
+Location：用于获取或设置窗体的URL，并且可以用于解析URL
+属性:
+href="http://wwww.imooc.com:8080/list.php?courseid=8#mediaid118"
+protocol host hostname port pathname search hash
+对象方法:assign()加载新文档;reload()重新加载当前文档;replace()用新文档替换当前文档;
+
+Navigator对象：
+属性:
+appCodeName;appName浏览器名称;appVersion浏览器的平台和版本信息;
+platform运行浏览器的操作系统平台;
+userAgent返回客户机发送服务器的user-agent头部的值；返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
+
+screen对象:对象用于获取用户的屏幕信息
+availHeight:窗口可以使用的屏幕高度
+availWidth:窗口可以使用的屏幕宽度
+colorDepth:用户浏览器表示的颜色位数
+pixelDepth:用户浏览器表示的颜色位数(IE不支持)
+height:屏幕的高度
+width：屏幕的宽度
+
 
 css要做的练习:
 1.css各种布局
