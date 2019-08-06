@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery</title>
+        <script src="../js/jquery-3.4.1.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div></div>
+        <p id="test" class="test"></p>
+        <p class="test"></p>
+        <script>
+            //$(document).ready 的作用是等页面的文档（document）中的节点都加载完毕后，再执行后续的代码
+            $(document).ready(function(){
+                $('div').html('你好');
+            });
+            //DOM对象
+            console.log(document.getElementById('test'));
+            //通过jQuery方法包装后的对象，是一个类数组对象。它与DOM对象完全不同，唯一相似的是它们都能操作DOM。
+            console.log($('#test'));
+            var p1 = $('#test');
+            p1.html('jquery');
+            //利用数组下标的方式读取到jQuery中的DOM对象
+            console.log(p1[0]);
+            //通过jQuery自带的get()方法
+            console.log(p1.get(0));
+            var p2 = $('.test');
+            console.log(p2.get());
+        </script>
+    </body>
+</html>

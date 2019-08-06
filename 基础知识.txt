@@ -271,10 +271,51 @@ var h= document.documentElement.offsetHeight
     || document.body.offsetHeight;
 
 网页卷去的距离与偏移量：
-scrollLeft:设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容。
-scrollTop:设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 ，即上边灰色的内容。
-offsetLeft:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 。
-offsetTop:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 。
+scrollLeft:设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容
+scrollTop:设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 ，即上边灰色的内容
+offsetLeft:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 
+offsetTop:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 
+
+
+四.Jquery：js库；引入在线不压缩版本https://code.jquery.com/jquery-3.4.1.js;通过jQuery方法包装后的对象，是一个类数组对象
+（1）样式篇
+jquery转换为DOM对象:
+    利用数组下标的方式读取到jQuery中的DOM对象：$('div')[0]
+    通过jQuery自带的get()方法：$('div').get(0);
+DOM对象转换为jquery对象:
+    $(DOM);
+选择器:
+1.id选择器$('#id');
+2.类选择器$('.class');
+3.全选择器$('*');
+4.元素选择器$('div');
+5.层级选择器:
+$('div>p'):子选择器，直接子元素
+$('div p'):后代选择器，所有后代，儿子，孙子，曾孙...
+$('.prev + div'):相邻兄弟选择器，选择紧相邻的兄弟节点
+$('.prev ~ div')：一般兄弟选择器,该元素之后的所有兄弟节点
+6.基本筛选选择器：‘:’开头
+$(':first')：匹配第一个元素
+$(':last')：匹配最后一个元素
+$(':not(selector)'):除去不匹配元素
+$(':eq(index)'):指定索引的元素
+$(':gt(index)'):大于给定索引的元素
+$(':even'):选择索引微偶数的元素
+$(':odd'):选择索引为奇数的元素
+$(':lt(index)'):小于给定索引的元素
+$(':header'):选择所有标题元素
+$(':lang(language)'):选择指定语言的元素
+$(':root'):选择该文档的根元素
+$(':animated'):选择所有正在执行动画效果的元素
+7.内容筛选选择器：
+$(".div:contains(':contains')")：找到所有包含文本内容的元素
+$(".div:has(span)")：找到包含指定元素的的元素
+$("a:parent")：找到所有有子元素的元素
+$("a:empty")：找到所有没有子元素的元素
+8.可见性筛选选择器
+（2）DOM篇
+（3）事件篇
+（4）动画篇
 
 css要做的练习:
 1.css各种布局
