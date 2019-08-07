@@ -359,7 +359,7 @@ $(this)==把this对象加工成一个jquery对象
 .addClass('newclass')：增加样式
 .removeClass('class1 class2')：删除样式
 .toggleClass():切换样式
-toggleClass( className )
+.toggleClass( className )
 .toggleClass( className, switch )
 .toggleClass( [switch ] )
 .toggleClass( function(index, class, switch) [, switch ] )
@@ -372,8 +372,127 @@ toggleClass( className )
 .removeData(el);
 
 （2）DOM篇
+创建：
+DOM创建节点及节点属性：document.createElement--setAttribute--innerHTML--appendChild
+jQuery节点创建与属性的处理:$("<div></div>")
+
+插入：
+内部插入,父子关系：
+一个元素往后插入到另一个元素里面:append();appendTo();
+一个元素从前插入到另一个元素里面:prepend();prependTo();
+外部插入,兄弟关系:
+after();before();被插入内容放在方法后面
+insertBefore();insertAfter();被插入内容放在方法前面
+
+删除:
+empty();删除所有子节点,不包括元素本身
+remove(params);有参可以过滤内容
+remove();删除元素及元素里面的内容包括元素本身，绑定的事件会丢失
+detach();删除节点，但是数据和事件不消失
+复制和替换:
+clone():深度复制，将所有匹配元素以及其里面的内容复制
+clone(true):增加true参数，则会将数据和事件都复制
+target.replaceWith(newContent):替换为新内容
+newContent.replaceAll(target):用新内容替换
+$('p').wrap('<div></div>'):用div包裹p元素
+$('p').unwrap('<div></div>'):去掉p的父元素div
+$('p').wrapAll('<div></div>'):给所有p元素增加一个div包裹
+$('p').wrapAll(function() {  :每个p增加一个div包裹
+    return '<div><div/>'; 
+})
+$('div').wrapInner('<p></p>')：给div内部的元素增加一个包裹元素
+
+jQuery遍历:
+children(param):查找合集里面的第一级子元素,仅儿子辈,参数可以是指定的选择器
+find(选择器表达式必填):查找后代元素，管是儿子辈，孙子辈都可以
+parent():查找父元素
+parents(选择器表达式必填):查找到祖先节点
+closest(选择器):从元素本身开始，在DOM 树上逐级向上级元素匹配，并返回最先匹配的祖先元素
+next()：允许我们找遍元素集合中紧跟着这些元素的直接兄弟元素
+prev():查找指定元素集合中每一个元素紧邻的前面同辈元素的元素集合
+siblings():所有兄弟节点
+add():往一个指定的集合中插入新的元素
+each():$('li').each(function(index,el){})
+
 （3）事件篇
+鼠标事件:
+click(func)单击事件;click('data',func),传递data数据
+dbclick(func)双击事件
+mousedown():鼠标按下事件
+mouseup():鼠标弹起事件
+mousemove():鼠标移动事件
+mouseover():鼠标移入事件
+mouseout():鼠标移出事件
+mouseenter():鼠标移到元素内部
+mouseleave():鼠标移到元素外部
+hover(handlerIn,handlerOut)：鼠标悬浮事件
+focusin():元素聚焦事件
+focusout():
+表单事件:
+blur():元素本身失去焦点
+focus():元素本身聚焦
+change():改变值
+select():选择事件
+submit():表单提交事件
+键盘事件:
+keydown():按下键盘事件,每次获取的内容都是之前输入的，当前输入的获取不到
+keyup():松开按键事件,每次获取的内容都是当前输入
+keypress():只能捕获单个字符，不能捕获组合键,无法响应系统功能键,不区分小键盘和主键盘的数字字符
+事件绑定和解绑:
+$(el).on('click mouseover mouseout',function(){});
+$("#elem").on({
+    mouseover:function(){},  
+    mouseout:function(){}
+});
+$("div").on("click","p",fn):事件绑定在最上层div元素上，当用户触发在a元素上，事件将往上冒泡，
+一直会冒泡在div元素上。如果提供了第二参数，那么事件在往上冒泡的过程中遇到了选择器匹配的元素，
+将会触发事件回调函数
+$("elem").off("mousedown"):解绑事件
+
+jQuery事件对象的作用：
+1.兼容性更好
+2.代码更简洁
+3.event.target对象为当前触发的对象
+jQuery事件对象的属性和方法：
+event.type：获取事件的类型
+event.pageX 和 event.pageY：获取鼠标当前相对于页面的坐标
+event.preventDefault() 方法：阻止默认行为
+event.stopPropagation() 方法：阻止事件冒泡
+event.which：获取在鼠标单击时，单击的是鼠标的哪个键
+event.currentTarget : 在事件冒泡过程中的当前DOM元素
+
+自定义事件:
+trigger():$('#elem').trigger('click');直接触发click事件或者自定义的事件
+triggerHandler():和trigger一样，但可以阻止冒泡
+
 （4）动画篇
+隐藏与显示：
+$('div').hide(fast/slow):隐藏元素
+$('div').show(fast/slow):显示元素
+toggle()自动切换隐藏和显示
+上卷下拉：
+slideDown(time,function(){}):下拉动画
+slideUp(time,function(){}):上卷动画
+slideToggle(time,function(){}):用滑动动画显示或隐藏一个匹配元素
+淡入淡出：
+fadeOut(time,function(){}):淡出动画
+fadeIn(time,function(){}):淡入动画
+fadeToggle(time,function(){}):淡入淡出动画切换
+.fadeTo( duration, opacity ,callback):淡入效果,透明的不变
+自定义动画:
+.animate( properties ,[ duration ], [ easing ], [ complete ] )//执行动画
+.animate( properties, options )
+.stop( [clearQueue ], [ jumpToEnd ] ) //停止动画
+.stop( [queue ], [ clearQueue ] ,[ jumpToEnd ] )
+jquery核心：
+each()方法: .$.each(object, function(index,value){})
+inArray():  .$inArray( value, array ,[ fromIndex可选默认0] )返回值等于-1或大与-1
+trim(): $.trim(el)去掉元素开始和结尾的空格换行符等
+$(a).get(index):根据索引查找元素，可以是负值表示往前查找
+$("li").index()：返回的是li在同辈元素中的排序序号
+
+ES6:
+
 
 css要做的练习:
 1.css各种布局
@@ -385,6 +504,10 @@ prespective;perspective-origin:创建3D场景
 transfrom;translate(位移),rotate(旋转)：场景变换
 
 html5要做的练习:
-1.新标签页面练习
+dataset
 
 js要做的练习:
+
+jquery要做的练习:
+toggleClass()没太懂
+add()方法没太懂
