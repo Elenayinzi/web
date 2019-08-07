@@ -312,7 +312,65 @@ $(".div:contains(':contains')")：找到所有包含文本内容的元素
 $(".div:has(span)")：找到包含指定元素的的元素
 $("a:parent")：找到所有有子元素的元素
 $("a:empty")：找到所有没有子元素的元素
-8.可见性筛选选择器
+8.可见性筛选选择器：
+$(':visible'):选择所有显示的元素
+$(':hidden'):选择所有隐藏的元素
+9.属性筛选选择器：
+$('div[name=p]')
+10.元素筛选选择器：
+$(":first-child"):第一个子元素
+$(":last-child")：最后一个子元素
+$(":only-child"):唯一子元素
+$(":nth-child(n)"):第n个子元素
+$(":nth-last-child(n)"):从最后一个元素开始的第n个元素
+10.表单元素选择器:
+$(':input')
+$('input:text')
+$('input:password')
+$('input:radio')
+$('input:checkbox')
+$('input:submit')
+$('input:image')
+$('input:button')
+$('input:file')
+11.表单对象属性筛选选择器:
+$('input:enabled')
+$('input:disabled')
+$('input:checked')
+$('option:selected')
+12.特殊选择器this:
+this是JavaScript中的关键字，指的是当前的上下文对象，简单的说就是方法/属性的所有者
+当然在JavaScript中this是动态的,也就是说这个上下文对象都是可以被动态改变的(可以通过call,apply等方法)
+同样的在DOM中this就是指向了这个html元素对象，因为this就是DOM元素本身的一个引用
+$(this)==把this对象加工成一个jquery对象
+ jQuery的属性与样式：
+ .attr(attribute):获取属性值；attr(属性名, 属性值)：设置属性的值
+ .attr(属性名,函数值)：设置属性的函数值；ttr(attributes)：给指定元素设置多个属性值，即：{属性名一: “属性值一” , 属性名二: “属性值二” , … … }
+ .removeAttr(attribute):删除属性
+ .html() 不传入值，就是获取集合中第一个匹配元素的HTML内容
+ .html(htmlString)  设置每一个匹配元素的html内容
+ .html( function(index, oldhtml) ) 用来返回设置HTML内容的一个函数
+ .text() 得到匹配元素集合中每个元素的合并文本，包括他们的后代
+ .text( textString ) 用于设置匹配元素内容的文本
+ .text( function(index, text) ) 用来返回设置文本内容的一个函数
+.val():主要用于处理表单元素的值:input，select,textarea等
+.val(value)
+.val(function)
+.addClass('newclass')：增加样式
+.removeClass('class1 class2')：删除样式
+.toggleClass():切换样式
+toggleClass( className )
+.toggleClass( className, switch )
+.toggleClass( [switch ] )
+.toggleClass( function(index, class, switch) [, switch ] )
+样式操作.css():
+.css( propertyName ):获取属性值-.css("background-color")，.css(['width','height'])
+.css(propertyName, value ):设置属性值-.css("background-color","red")
+.css({'font-size':"15px","background-color" :"#40E0D0"})
+元素的数据存储:
+.data(el,key,value);
+.removeData(el);
+
 （2）DOM篇
 （3）事件篇
 （4）动画篇
