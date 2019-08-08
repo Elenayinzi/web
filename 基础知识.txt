@@ -491,8 +491,38 @@ trim(): $.trim(el)去掉元素开始和结尾的空格换行符等
 $(a).get(index):根据索引查找元素，可以是负值表示往前查找
 $("li").index()：返回的是li在同辈元素中的排序序号
 
-ES6:
-
+ES6入门:
+环境准备:git，webpack,js
+下载项目:构建工具项目：可以自动编译自动刷新浏览器
+git clone https://github.com/cucygh/es6-webpack.git
+npm i
+npm i webpack -g
+npm i webpack-dev-server -g
+npm start
+1.常量:const定义
+2.作用域:用let代替var
+es6之前立即执行函数:((fuction(){})())隔离作用域
+es6:{}花括号定义一个块作用域
+3.声明函数
+es6之前:function test(){}; this指向被调用执行时的对象
+es6箭头函数:() => {} this指向的是定义时的对象;()中放参数，参数只有一个的时候可以省略()；{}中放语句表达式，如果只有一句return则可以省略{}
+4.默认参数:f(x, y = 7, z = 42)可以给参数默认值
+可变参数：传递给函数的参数是可变的
+扩展运算符:...params 用于数组中比如合并数组
+5.对象代理:proxy保护原始数据
+es6进阶指导：
+解构赋值
+模板字符串
+正则扩展
+class
+Iterator
+数字扩展
+函数扩展
+Module
+set和map
+对象扩展
+generator
+symbol
 
 css要做的练习:
 1.css各种布局
