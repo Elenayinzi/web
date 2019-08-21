@@ -5,3 +5,4 @@
 //import "./src/parameter"
 //import "./src/proxy"
 //test()
+import './src/sample'
