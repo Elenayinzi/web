@@ -534,6 +534,31 @@ js中存在大量的异步操作：
 node.js：无阻塞高并发，异步操作来实现，大量操作依赖回调；
 回调的问题：嵌套层次深；无法正常使用return和throw;无法正常检索堆栈信息；多个回调之间难以建立连接;
 
+JS进阶篇:
+数据类型：弱类型特性，定义时不用指定类型;
+    基本类型：number,string,boolean,null,undefined
+    对象类型object:Function,Array,Date...
+    隐式转换:-号可将字符串转换为数字；+号可将数字转换为字符串；==号可将字符串，数字，对象转换为数字，字符串等；===全等，先判断类型，再判断值；NaN和object没有全等；
+    包装对象:string,number,boolean等对属性进行操作时自动new了一个对象，当使用完属性则去掉了该对象；
+    类型检测:
+        typeof()判断基本类型和函数类型;返回一个字符串，null返回类型为object
+        instanceof判断对象类型: obj instanceof Object：[1,2] instanceof Array === true;不同的window和iframe不能用
+        Object.prototype.toString.apply(obj):[],function,（null,undefined失效返回对象IE678中）
+        construnctor:构造函数
+        duck type:通过特征判断类型
+表达式和运算符:
+
+语句：
+对象：
+数组：
+函数：
+this:
+闭包和作用域：
+oop:
+正则与模式匹配:
+
+
+
 css要做的练习:
 1.css各种布局
 2.css各种选择器
@@ -547,6 +572,7 @@ html5要做的练习:
 dataset
 
 js要做的练习:
+sort()方法是怎么排序的
 
 jquery要做的练习:
 toggleClass()没太懂
