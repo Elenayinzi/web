@@ -2,7 +2,7 @@ var Local = function(){
     //游戏对象
     var game;
     //时间间隔
-    var INTERVAL = 200;
+    var INTERVAL = 500;
     //定时器
     var timer = null;
     //时间计数器
@@ -59,7 +59,7 @@ var Local = function(){
     //计时函数
     var timeFunc = function(){
         timeCount = timeCount + 1;
-        if(timeCount == 5){
+        if(timeCount == 2){
             timeCount = 0;
             time = time + 1;
             game.setTime(time);

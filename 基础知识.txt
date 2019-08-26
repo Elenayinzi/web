@@ -547,9 +547,50 @@ JS进阶篇:
         construnctor:构造函数
         duck type:通过特征判断类型
 表达式和运算符:
-
-语句：
+    表达式：
+        原始表达式
+        复合表达式
+        数组，对象初始化表达式
+        函数表达式
+        属性访问表达式
+        函数调用表达式
+        对象创建表达式
+    运算符：
+        一元：++，--
+        二元：+，-，*，/
+        三元：c?a:b
+        赋值：=
+        比较：==，===
+        算术：+，-，*，/
+        位：|
+        逻辑：&&，||，！
+        字符串：+
+        特殊运算符：
+        ?:(条件运算符);,计算表达式(1,2,3)=3;delete删除属性delete obj.x;
+        in判断一个对象中是否有某个变量;new创建示例;this;void;typeof;instaneof;
+    运算符优先级：
+语句：没有块级作用域
+    块语句:{}
+    var声明语句:var a = 1;
+    try{}catch(){}finally{}
+    function函数语句
+    for...in:有很多问题
+    switch(){case 1:break;}
+    循环语句：while(){};do{}while();for(var i;i<10;i++){}
+    with语句：不用了
+严格模式：'use strict';
 对象：
+    属性无顺序的，有key，有value
+    对象的结构: proto;class;extensible;writable;get/set...
+    创建对象：1.字面量方式var obj={x:1}；2.new/原型链；3.Object.create({x:1});
+    查找对象的属性时会查找原型链这就是继承，删除和修改不会去改原型链
+    属性操作：1读写操作obj.x;obj['x'];2读写异常undefined;3属性删除delete person.age(变量，函数等不能被删除，隐式等可以删除);
+    4.属性检查看对象中是否有某个属性；5.属性枚举
+    另外一种读写属性等方法：get()/set()
+    属性级的权限设置：object.defineproperty()；属性标签configurable,writable;
+    对象标签：proto原型;class类型;extensible可扩展性
+    序列化：JSON.stringify(obj);
+    反序列化：JSON.parse({'{"x":1}'});
 数组：
 函数：
 this:
@@ -573,6 +614,7 @@ dataset
 
 js要做的练习:
 sort()方法是怎么排序的
+js类的使用
 
 jquery要做的练习:
 toggleClass()没太懂
