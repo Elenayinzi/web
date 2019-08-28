@@ -1,4 +1,4 @@
-一：html
+一：HTML
 html是xtml语法的子集，并且进行了简化
 Html5是在html上延续并且做了更多的优化和简化
 1.声明方式：<!doctype html>
@@ -75,7 +75,7 @@ pre
     tabindex控制tab的跳转顺序；contenteditable内容可编辑;script标签的designMode属性打开可以在网页
     实时编辑window.document.designMode = 'on';
 
-二：css
+二：CSS
 1.css动画：transiotin,animation;-webkit-,-moz-,-o-
 transition过渡属性:<过渡属性名称 过渡时间>，<过渡属性名称 过渡时间><过渡模式>
 animation动画属性
@@ -85,12 +85,29 @@ animation-delay:动画执行时间，默认0；正值或者负值都可以
 巧用border宽度
 实现运动动画：正圆运动；椭圆运动；弧形运动；
 css3hover效果：定位，颜色，动画，过渡
-动画库csshake
-css新东西：sass,less,stylus预处理器
-css制作图标开源项目：one.div;fileicon.css
-css书籍：css权威指南；精通css高级web标准解决方案；css secrets
 
-三.js
+css3:
+    兼容浏览器加上前缀:-webkit-,-moz-,-ms,-o
+    1.边框:border-radius;border-shadow;border-color;border-image;
+    2.颜色相关：
+        透明度：RGBA-color：rgba(R,G,B,A);
+        颜色渐变：（渐变类型-方向-两个以上颜色）linear-gradient(to top left, red,orange,yellow,green,blue,indigo,violet)
+    3.文字与字体：
+        text-overflow:ellipsis; 
+        嵌入字体@font-face：@font-face {
+            font-family : 字体名称;
+            src : 字体文件在服务器上的相对或绝对路径;
+        }
+        text-shadow: X-Offset Y-Offset blur color;
+    4.背景相关样式：
+    5.css3选择器
+    6.css3变形与动画
+    7.布局样式
+    8.Media Queries与Responsive设计
+    9.用户界面与其他重要属性
+
+
+三.JS
 1.学习js让网页有更多的交互
 2.插入js使用script标签
 3.引用外部js，script
@@ -276,8 +293,167 @@ scrollTop:设置或获取位于对象最顶端与窗口中可见内容的最顶�
 offsetLeft:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 
 offsetTop:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 
 
+JS进阶篇:
+数据类型：弱类型特性，定义时不用指定类型;
+    基本类型：number,string,boolean,null,undefined
+    对象类型object:Function,Array,Date...
+    隐式转换:-号可将字符串转换为数字；+号可将数字转换为字符串；==号可将字符串，数字，对象转换为数字，字符串等；===全等，先判断类型，再判断值；NaN和object没有全等；
+    包装对象:string,number,boolean等对属性进行操作时自动new了一个对象，当使用完属性则去掉了该对象；
+    类型检测:
+        typeof()判断基本类型和函数类型;返回一个字符串，null返回类型为object
+        instanceof判断对象类型: obj instanceof Object：[1,2] instanceof Array === true;不同的window和iframe不能用
+        Object.prototype.toString.apply(obj):[],function,（null,undefined失效返回对象IE678中）
+        construnctor:构造函数
+        duck type:通过特征判断类型
+表达式和运算符:
+    表达式：
+        原始表达式
+        复合表达式
+        数组，对象初始化表达式
+        函数表达式
+        属性访问表达式
+        函数调用表达式
+        对象创建表达式
+    运算符：
+        一元：++，--
+        二元：+，-，*，/
+        三元：c?a:b
+        赋值：=
+        比较：==，===
+        算术：+，-，*，/
+        位：|
+        逻辑：&&，||，！
+        字符串：+
+        特殊运算符：
+        ?:(条件运算符);,计算表达式(1,2,3)=3;delete删除属性delete obj.x;
+        in判断一个对象中是否有某个变量;new创建示例;this;void;typeof;instaneof;
+    运算符优先级：
+语句：没有块级作用域
+    块语句:{}
+    var声明语句:var a = 1;
+    try{}catch(){}finally{}
+    function函数语句
+    for...in:有很多问题
+    switch(){case 1:break;}
+    循环语句：while(){};do{}while();for(var i;i<10;i++){}
+    with语句：不用了
+严格模式：'use strict';
+对象：
+    属性无顺序的，有key，有value
+    对象的结构: proto;class;extensible;writable;get/set...
+    创建对象：1.字面量方式var obj={x:1}；2.new/原型链；3.Object.create({x:1});
+    查找对象的属性时会查找原型链这就是继承，删除和修改不会去改原型链
+    属性操作：1读写操作obj.x;obj['x'];2读写异常undefined;3属性删除delete person.age(变量，函数等不能被删除，隐式等可以删除);
+    4.属性检查看对象中是否有某个属性；5.属性枚举
+    另外一种读写属性等方法：get()/set()
+    属性级的权限设置：object.defineproperty()；属性标签configurable,writable;
+    对象标签：proto原型;class类型;extensible可扩展性
+    序列化：JSON.stringify(obj);
+    反序列化：JSON.parse({'{"x":1}'});
+数组：弱类型,长度:0-2^23-1
+    数组是值的有序集合，每个值叫数组元素，数组中可以有不同类型元素
+    创建数组：字面量:var arr =[];new Array:var arr=new Array();
+    数组读写:arr[0];delete arr[0]-arr[0]undefined,长度不变
+    数组增删:
+        尾部添加元素arr.push(1);头部添加元素arr.unshift(0);
+        尾部删除元素arr.pop();头部删除元素arr.shift();
+    数组迭代:for循环;for...in...注意原型的属性去掉
+    二维数组:var arr=[[0,1]];
+    稀疏数组：不含有从0开始的连续索引。length值比实际个数大；
+    数组的方法:Array.proptotype
+        arr.join();将数组转换为字符串，原数组不改变
+        arr.reverse();数组逆序，原数组会被修改
+        arr.sort();数组排序，原数组被修改
+        arr1.concat(arr2);数组合并，原数组不改变
+        arr.slice(1,3);返回索引为1到索引为2的数组部分，原数组不改变,左闭右开；索引可以为负数，从右开始为-1
+        arr.splice(2);截取了索引为2后面的部分并删除，原数组改变
+        arr.splice(2,3);一个参数是索引，二个参数是元素个数
+        arr.splice(1,1,'a','b');删除索引1的元素，讲a,b元素添加到删除的位置
+        arr.forEach(function(x,index,a));数组遍历
+        arr.map(function(x){});数组映射,原数组不改变
+        arr.filter(function(x,index){});数组过滤，原数组不改变
+        arr.every(function(x){});数组判断，所有的满足条件返回true
+        arr.some(function(x){});数组判断，任意一个元素满足条件返回true
+        arr.reduce(function(x,y){},0);数组元素两两操作,参数0可传可不传，传时作为第一个x的值，原数组不改变
+        arr.reduceRight(function(x,y){},0);同上，但是从右往左
+        arr.indexOf(1);数组检索，有返回其索引，没有返回-1
+        arr.lastIndexOf();从右往左找，其他同上
+        Array.isArray(arr);arr instanceof Array;判断是否为数组
+函数：函数名，参数列表，函数体，js代码块，被定义一次，可以执行和调用多次,函数也叫函数对象
+    this：
+        全局的this指向window:this===window
+        一般函数的this:指向window/global,严格模式下指向undefined;
+        作为对象方法的函数的this指向该对象
+        对象原型链上的this可以指向该对象
+        get/set方法的this指向方法所在对象
+        构造器的this
+        call/apply方法中的this
+        bind中的this:
+    arguments:
+        函数属性：function foo(x,y,z){};foo.length形参个数;foo.name函数名
+        arguments.length实参个数;arguments[0];arguments.callee===foo.name
+        call:
+        apply:
+        bind:
+        currying:
+    作用域：全局，局部
+    不同调用方式：直接调用foo();对象调用o.foo();构造器调用new Foo();原型上的方法调用func.call(o);
+    不同创建方式：
+        函数声明：function a(){};会被前置，放在最前面
+        函数表达式：var a=function(){};(function(){})();return function(){};var a=function a(){}命名式函数表达式；变量声明会被提前，但是定义的函数不会
+        函数构造器：var func = new Function('a','b'.'操作');可访问全局变量，不可访问局部变量
+闭包和作用域：
+    闭包：函数中的函数可以在函数执行完后还能使用该函数的局部变量
+    作用域：全局变量；函数作用域；eval("var a=1");
+    作用域链：从里到外能访问到变量
+    es3执行上下文(EC)
+oop:面向对象
+    继承：基于原型链的继承
+    proptotype属性
+    封装：
+    抽象类：
+    多态：
+    模拟重载：
+    链式调用：一个对象连着调用多个函数；
+    模块化：
+正则与模式匹配:
+    正则表达式使用单个字符串来藐视，匹配一系列符合某个句法规则的字符串
+    正则表达式：
+        /正则表达式/
+        new RegExp();
+    正则基础：
+        .:匹配任意字符，除\n,\r,\u2028 or \u2029，/.../.test('1a@');
+        \d:数字0-9,/\d\d\d/.test('123');
+        \D:非\d，即除0-9的字符，/\D\D\D/.test('ab!');
+        \w:数字0-9，或字母a-z及A-Z(大小写),或下划线，/\w\w\w\w/.test('aB9_');
+        \W：非\w，/\W\W\W\W/.test('@!#%');
+        \s:空格符，TAB，换页符，换行符，/\sabc/.test(' abc')
+        \S:非\S
+        \t \r \n \v \f: tab 回车 换行 垂直制表符 换页符
+    范围符号：
+        [...]:字符范围，[a-z]
+        [^...]:字符范围以外，[^a-z]
+        ^:匹配行首，^Hi
+        $:匹配行尾，test$
+        \b:零宽单词边界，\bno
+        \B:非\b，\Bno
+    特殊字符转义：\,eg：\^,\$
+    分组：
+        (x):分组，并记录匹配到的字符串，/(abc)/
+        \n:表示使用分组符(x)匹配到的字符串，/(abc)\1/.test('abcabc');
+        (?:x):仅分组，/(?:abc)(def)\1/.test('abcdefdef')
+    重复：
+    三个Flag:
+        global:
+        ignoreCase:
+        multiline:
+    RegExp属性：
+        global,ignoreCase,multiline,source
+    RegExp对象方法:
+        complie();exec();test();toString();
+    string类型与正则相关的方法:search();replace();match();split();
 
-四.Jquery：js库；引入在线不压缩版本https://code.jquery.com/jquery-3.4.1.js;通过jQuery方法包装后的对象，是一个类数组对象
+四.JQUERY：js库；引入在线不压缩版本https://code.jquery.com/jquery-3.4.1.js;通过jQuery方法包装后的对象，是一个类数组对象
 （1）样式篇
 jquery转换为DOM对象:
     利用数组下标的方式读取到jQuery中的DOM对象：$('div')[0]
@@ -491,7 +667,7 @@ trim(): $.trim(el)去掉元素开始和结尾的空格换行符等
 $(a).get(index):根据索引查找元素，可以是负值表示往前查找
 $("li").index()：返回的是li在同辈元素中的排序序号
 
-ES6入门:
+五：ES6入门:
 环境准备:git，webpack,js
 下载项目:构建工具项目：可以自动编译自动刷新浏览器
 git clone https://github.com/cucygh/es6-webpack.git
@@ -524,7 +700,7 @@ set和map
 generator
 symbol
 
-promise入门:
+六：promise入门:
 1.用于异步计算
 2.将异步操作队列话，按照期望的顺序执行，返回符合期望的结果
 3.对象之间可以传递操作promise对象，来帮助我们处理队列
@@ -534,120 +710,20 @@ js中存在大量的异步操作：
 node.js：无阻塞高并发，异步操作来实现，大量操作依赖回调；
 回调的问题：嵌套层次深；无法正常使用return和throw;无法正常检索堆栈信息；多个回调之间难以建立连接;
 
-JS进阶篇:
-数据类型：弱类型特性，定义时不用指定类型;
-    基本类型：number,string,boolean,null,undefined
-    对象类型object:Function,Array,Date...
-    隐式转换:-号可将字符串转换为数字；+号可将数字转换为字符串；==号可将字符串，数字，对象转换为数字，字符串等；===全等，先判断类型，再判断值；NaN和object没有全等；
-    包装对象:string,number,boolean等对属性进行操作时自动new了一个对象，当使用完属性则去掉了该对象；
-    类型检测:
-        typeof()判断基本类型和函数类型;返回一个字符串，null返回类型为object
-        instanceof判断对象类型: obj instanceof Object：[1,2] instanceof Array === true;不同的window和iframe不能用
-        Object.prototype.toString.apply(obj):[],function,（null,undefined失效返回对象IE678中）
-        construnctor:构造函数
-        duck type:通过特征判断类型
-表达式和运算符:
-    表达式：
-        原始表达式
-        复合表达式
-        数组，对象初始化表达式
-        函数表达式
-        属性访问表达式
-        函数调用表达式
-        对象创建表达式
-    运算符：
-        一元：++，--
-        二元：+，-，*，/
-        三元：c?a:b
-        赋值：=
-        比较：==，===
-        算术：+，-，*，/
-        位：|
-        逻辑：&&，||，！
-        字符串：+
-        特殊运算符：
-        ?:(条件运算符);,计算表达式(1,2,3)=3;delete删除属性delete obj.x;
-        in判断一个对象中是否有某个变量;new创建示例;this;void;typeof;instaneof;
-    运算符优先级：
-语句：没有块级作用域
-    块语句:{}
-    var声明语句:var a = 1;
-    try{}catch(){}finally{}
-    function函数语句
-    for...in:有很多问题
-    switch(){case 1:break;}
-    循环语句：while(){};do{}while();for(var i;i<10;i++){}
-    with语句：不用了
-严格模式：'use strict';
-对象：
-    属性无顺序的，有key，有value
-    对象的结构: proto;class;extensible;writable;get/set...
-    创建对象：1.字面量方式var obj={x:1}；2.new/原型链；3.Object.create({x:1});
-    查找对象的属性时会查找原型链这就是继承，删除和修改不会去改原型链
-    属性操作：1读写操作obj.x;obj['x'];2读写异常undefined;3属性删除delete person.age(变量，函数等不能被删除，隐式等可以删除);
-    4.属性检查看对象中是否有某个属性；5.属性枚举
-    另外一种读写属性等方法：get()/set()
-    属性级的权限设置：object.defineproperty()；属性标签configurable,writable;
-    对象标签：proto原型;class类型;extensible可扩展性
-    序列化：JSON.stringify(obj);
-    反序列化：JSON.parse({'{"x":1}'});
-数组：弱类型,长度:0-2^23-1
-    数组是值的有序集合，每个值叫数组元素，数组中可以有不同类型元素
-    创建数组：字面量:var arr =[];new Array:var arr=new Array();
-    数组读写:arr[0];delete arr[0]-arr[0]undefined,长度不变
-    数组增删:
-        尾部添加元素arr.push(1);头部添加元素arr.unshift(0);
-        尾部删除元素arr.pop();头部删除元素arr.shift();
-    数组迭代:for循环;for...in...注意原型的属性去掉
-    二维数组:var arr=[[0,1]];
-    稀疏数组：不含有从0开始的连续索引。length值比实际个数大；
-    数组的方法:Array.proptotype
-        arr.join();将数组转换为字符串，原数组不改变
-        arr.reverse();数组逆序，原数组会被修改
-        arr.sort();数组排序，原数组被修改
-        arr1.concat(arr2);数组合并，原数组不改变
-        arr.slice(1,3);返回索引为1到索引为2的数组部分，原数组不改变,左闭右开；索引可以为负数，从右开始为-1
-        arr.splice(2);截取了索引为2后面的部分并删除，原数组改变
-        arr.splice(2,3);一个参数是索引，二个参数是元素个数
-        arr.splice(1,1,'a','b');删除索引1的元素，讲a,b元素添加到删除的位置
-        arr.forEach(function(x,index,a));数组遍历
-        arr.map(function(x){});数组映射,原数组不改变
-        arr.filter(function(x,index){});数组过滤，原数组不改变
-        arr.every(function(x){});数组判断，所有的满足条件返回true
-        arr.some(function(x){});数组判断，任意一个元素满足条件返回true
-        arr.reduce(function(x,y){},0);数组元素两两操作,参数0可传可不传，传时作为第一个x的值，原数组不改变
-        arr.reduceRight(function(x,y){},0);同上，但是从右往左
-        arr.indexOf(1);数组检索，有返回其索引，没有返回-1
-        arr.lastIndexOf();从右往左找，其他同上
-        Array.isArray(arr);arr instanceof Array;判断是否为数组
-函数：函数名，参数列表，函数体，js代码块，被定义一次，可以执行和调用多次,函数也叫函数对象
-    this：
-        全局的this指向window:this===window
-        一般函数的this:指向window/global,严格模式下指向undefined;
-        作为对象方法的函数的this指向该对象
-        对象原型链上的this可以指向该对象
-        get/set方法的this指向方法所在对象
-        构造器的this
-        call/apply方法中的this
-        bind中的this:
-    arguments:
-        函数属性：function foo(x,y,z){};foo.length形参个数;foo.name函数名
-        arguments.length实参个数;arguments[0];arguments.callee===foo.name
-        call:
-        apply:
-        bind:
-        currying:
-    作用域：全局，局部
-    不同调用方式：直接调用foo();对象调用o.foo();构造器调用new Foo();原型上的方法调用func.call(o);
-    不同创建方式：
-        函数声明：function a(){};会被前置，放在最前面
-        函数表达式：var a=function(){};(function(){})();return function(){};var a=function a(){}命名式函数表达式；变量声明会被提前，但是定义的函数不会
-        函数构造器：var func = new Function('a','b'.'操作');可访问全局变量，不可访问局部变量
-闭包和作用域：
-    闭包：函数中的函数可以在函数执行完后还能使用该函数的局部变量
-oop:
-正则与模式匹配:
+七：TypeScript：微软开发，js的超集，遵循ES6语法，Angular2使用的是该语言
 
+八：微信小程序入门
+
+九：微信公众号
+
+十：三大框架实战+源码解析
+
+十一：代码性能
+
+
+
+html5要做的练习:
+dataset
 
 css要做的练习:
 1.css各种布局
@@ -657,13 +733,15 @@ css要做的练习:
 5.使用css3创建简单的3D场景：
 prespective;perspective-origin:创建3D场景
 transfrom;translate(位移),rotate(旋转)：场景变换
-
-html5要做的练习:
-dataset
+动画库csshake
+css新东西：sass,less,stylus预处理器
+css制作图标开源项目：one.div;fileicon.css
+css书籍：css权威指南；精通css高级web标准解决方案；css secrets
 
 js要做的练习:
 sort()方法是怎么排序的
 js类的使用
+正则表达式
 
 jquery要做的练习:
 toggleClass()没太懂
