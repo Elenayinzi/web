@@ -711,6 +711,13 @@ node.js：无阻塞高并发，异步操作来实现，大量操作依赖回调�
 回调的问题：嵌套层次深；无法正常使用return和throw;无法正常检索堆栈信息；多个回调之间难以建立连接;
 
 七：TypeScript：微软开发，js的超集，遵循ES6语法，Angular2使用的是该语言
+1.优势：支持es6,强大的IDE支持，是Angular2的开发框架
+2.开发环境：complier：把typescript代码转换为javascript代码
+    搭建本地环境:
+        命令行方式：sudo npm install -g typescript;tsc --version;tsc hello.ts
+        IDE：
+3.typescript语法：
+    字符串新特性:
 
 八：微信小程序入门
 
@@ -719,7 +726,6 @@ node.js：无阻塞高并发，异步操作来实现，大量操作依赖回调�
 十：三大框架实战+源码解析
 
 十一：代码性能
-
 
 
 html5要做的练习:
