@@ -417,8 +417,9 @@ oop:面向对象
     链式调用：一个对象连着调用多个函数；
     模块化：
 正则与模式匹配:
-    正则表达式使用单个字符串来藐视，匹配一系列符合某个句法规则的字符串
+    正则表达式使用单个字符串来描述，匹配一系列符合某个句法规则的字符串
     正则表达式：
+        
         /正则表达式/
         new RegExp();
     正则基础：
@@ -430,6 +431,7 @@ oop:面向对象
         \s:空格符，TAB，换页符，换行符，/\sabc/.test(' abc')
         \S:非\S
         \t \r \n \v \f: tab 回车 换行 垂直制表符 换页符
+        通配符：*匹配前一个字符零或多次
     范围符号：
         [...]:字符范围，[a-z]
         [^...]:字符范围以外，[^a-z]
@@ -720,13 +722,50 @@ node.js：无阻塞高并发，异步操作来实现，大量操作依赖回调�
     字符串新特性:
 
 八：微信小程序入门
-
+    流程：注册小程序-代码开发-提审-上线
+    注册小程序：1.公众号注册 2.小程序官网https://mp.weixin.qq.com/
+    新建小程序项目：微信开发者工具-选择一个目录创建一个普通项目
+    小程序代码结构：
+        pages中放路由组件;utils中放通用模块;app.js小程序入口,全局方法和变量;
+        app.json配置文件包括路由配置，窗口配置;app.wxss全局样式;project.config.json本地配置
+    小程序常见问题：
+        API请求:wx.request();
+        基础库兼容：版本兼容解决方式：1.if判断 2.wx.canIUse判断属性是否能用 3.wx.getSystemInfo判断小程序版本
+        不同页面传值方式：1.url传值同get方式;onload的options中取值  2.全局变量传值
+        3.本地缓存方式-传值：wx.setStorageSync('title',title);获取值wx.getStorageSync('title');
 九：微信公众号
 
 十：三大框架实战+源码解析
 
 十一：代码性能
 
+十二：ajax跨域问题
+    1.什么是ajax跨域问题：前端调用后台接口，接口不是同一个域的会产生跨域问题
+    2.产生原因，3个条件同时满足就会产生跨域问题：1.浏览器限制 2.跨域，协议，域名，端口任意一个不一样就是跨域  3.因为发送的是XHR(xmlhttprequest)请求
+    3.解决跨域的方法：
+        1.浏览器改变设置(不采用) ：--disable-web-security
+        2.xhr请求-JSONP请求(现在少用)，弊端a.服务端要改动代码 b.只支持get方法 c.发生的不是XHR的请求：dataType:jsonp-利用script标签请求资源可以跨域来解决问题;这种方式服务端也需要改动返回一个js脚本
+        整个原理是:使用jsonp的请求方式请求会自带一个callback参数这是一种约定，服务端接受到这个参数把要返回到json对象转成js脚本返回给前端；
+        3.跨域：
+            a.被调用方(服务端解决，支持跨域)  :从浏览器发出的请求，在返回头增加信息告诉浏览器允许跨域，改变被调用方
+                access-control-allow-origin:跨域地址*
+                access-control-allow-methods:请求方法*
+                1.中间http服务器增加响应头配置（服务端实现） 
+                    filter方法解决：配置参数
+                    spring框架解决方案：增加注解@crossOrign
+                2.应用服务器增加响应头配置：
+                    nginx配置：把在应用层filter中的实现中的参数都配置在nginx中
+                    apache配置：把在应用层filter中的实现中的参数都配置在apache中
+            b.调用方(客户端解决，隐藏跨域)：不是从浏览器直接发出的跨域请求，是从http服务器发出的请求，改变调用方
+                反向代理：配置nginx
+                反向代理：配置apache
+    4.简单请求和非简单请求：
+        简单请求：get/head/post;header:无自定义头;content-type:text/plain;mulitipart/form-data;application/x-www-form-urlencoded;
+        非简单请求：put,delete方法的ajax请求;发送json格式的ajax请求;带自定义头的ajax请求;有options预检命令；缓存预检命令减少请求;
+    5.带cookie的跨域：access-control-allow-origin要完全匹配；增加access-control-allow-credentials
+    6.带自定义头的跨域：access-control-allow-header:增加请求头配置
+
+Jasmine前台测试框架
 
 html5要做的练习:
 dataset
