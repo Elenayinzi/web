@@ -419,7 +419,6 @@ oop:面向对象
 正则与模式匹配:
     正则表达式使用单个字符串来描述，匹配一系列符合某个句法规则的字符串
     正则表达式：
-        
         /正则表达式/
         new RegExp();
     正则基础：
@@ -454,6 +453,7 @@ oop:面向对象
     RegExp对象方法:
         complie();exec();test();toString();
     string类型与正则相关的方法:search();replace();match();split();
+    正则表达式：
 
 四.JQUERY：js库；引入在线不压缩版本https://code.jquery.com/jquery-3.4.1.js;通过jQuery方法包装后的对象，是一个类数组对象
 （1）样式篇
